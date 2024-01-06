@@ -7,9 +7,9 @@
 #include <stdlib.h>
 
 void llenar_array();
-int promedio(int);
-float varianza(int, int);
-float desviacion_estandar(int);
+float promedio(int);
+float varianza(float, int);
+float desviacion_estandar(float);
 
 int arraymanin[50];
 
@@ -27,7 +27,8 @@ int main()
     varian = varianza(prom, 50);
     ds = desviacion_estandar(varian);
     
-    printf("\n===============================================================================================\nel promedio es: %d\n la varianza: %d\n la desviacion estandar %f\n===============================================================================================");
+    printf("\n===============================================================================================\nel promedio es: %d\n la varianza: %d\n la desviacion estandar %f\n===============================================================================================", prom, varian, ds);
+
 
     return 0;
 }
@@ -41,7 +42,7 @@ void llenar_array(){
     }
 }
 
-int promedio(int num){
+float promedio(int num){
     int prom = 0;
     int i = 0;
 
@@ -52,7 +53,7 @@ int promedio(int num){
     return prom/num;
 }
 
-float varianza(int promed,int num_dat){
+float varianza(float promed, int num_dat){
     float varianz;
     int i = 0;
 
@@ -63,6 +64,6 @@ float varianza(int promed,int num_dat){
     return varianz /= 50;
 }
 
-float desviacion_estandar(int varianz){
+float desviacion_estandar(float varianz){
     return sqrt(varianz);
 }
